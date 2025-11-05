@@ -8,7 +8,7 @@ export default function App() {
   const [period, setPeriod] = useState("daily");
 
   useEffect(() => {
-    fetch("/data.json")
+    fetch("public/data.json")
       .then((res) => res.json())
       .then(setData)
       .catch(console.error);
