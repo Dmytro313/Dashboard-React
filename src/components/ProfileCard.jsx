@@ -4,7 +4,7 @@ export default function ProfileCard({ period, setPeriod }) {
   return (
     <section className="profile">
       <div className="profile-header">
-        <img src="./public/avatar_male.png" alt="Avatar" className="avatar" />
+        <img src={`${import.meta.env.BASE_URL}avatar_male.png`} alt="Avatar" className="avatar" />
         <div className="profile-text">
           <p>Report for</p>
           <h1>
