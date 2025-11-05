@@ -8,8 +8,11 @@ export default function App() {
   const [period, setPeriod] = useState("daily");
 
   useEffect(() => {
-    fetch("public/data.json")
-      .then((res) => res.json())
+    fetch(`${import.meta.env.BASE_URL}data.json`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load data.json");
+        return res.json();
+      })
       .then(setData)
       .catch(console.error);
   }, []);
